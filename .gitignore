@@ -1,0 +1,8 @@
+# Directories
+.brainStorage/
+
+# Files
+*.o
+*.a
+*.pdf
+
