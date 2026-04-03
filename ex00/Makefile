@@ -6,7 +6,7 @@
 #    By: mhidani <mhidani@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/04/01 15:58:03 by mhidani           #+#    #+#              #
-#    Updated: 2026/04/03 14:58:40 by mhidani          ###   ########.fr        #
+#    Updated: 2026/04/03 20:05:28 by mhidani          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,6 +74,10 @@ all: banner $(NAME)
 
 clean:
 	@$(call remove_dir_exists, $(OBJ_DIR))
+
+clean_logs:
+	@$(RM) $(RMFLAGS) valgrind_*.log
+	@echo "🟧 valgrind logs is cleaned"
 
 fclean: clean
 	@$(call remove_file_exists, $(NAME))
