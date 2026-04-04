@@ -1,3 +1,8 @@
 # Directory
+.brainStorage/
+.vscode/
 
 # Files
+*.log
+worms
+
