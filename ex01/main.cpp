@@ -6,7 +6,7 @@
 /*   By: mhidani <mhidani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/01 16:00:53 by mhidani           #+#    #+#             */
-/*   Updated: 2026/04/04 12:06:06 by mhidani          ###   ########.fr       */
+/*   Updated: 2026/04/05 15:45:57 by mhidani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,21 @@
 
 void printTest(std::ostream& out, const int idx, const std::string tba) {
 	out << "test " << idx << " ";
-	for (int i = 0; i < 74; i++)
+	for (int i = 0; i < 73; i++)
 		out << "=";
 	out << std::endl;
 	out << tba;
 	out << std::endl;
+	for (int i = 0; i < 80; i++)
+		out << ".";
+	out << std::endl;
 }
+
 
 int	main(void) {
 	int	index = 1;
 	{
-		printTest(
-			std::cout, index++, 
+		printTest(std::cout, index++, 
 			"Successfull: grade is same"
 		);
 
@@ -41,8 +44,7 @@ int	main(void) {
 		std::cout << bureaucrat << std::endl;
 	}
 	{
-		printTest(
-			std::cout, index++,
+		printTest(std::cout, index++,
 			"Successfull: bureaucrat's grade is higher to sign form"
 		);
 
@@ -55,8 +57,7 @@ int	main(void) {
 		std::cout << bureaucrat << std::endl;
 	}
 	{
-		printTest(
-			std::cout, index++, 
+		printTest(std::cout, index++, 
 			"Failed: grade is less to sign form"
 		);
 
