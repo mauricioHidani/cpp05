@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mhidani <mhidani@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mhidani <mhidani@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/01 16:00:59 by mhidani           #+#    #+#             */
-/*   Updated: 2026/04/05 15:39:25 by mhidani          ###   ########.fr       */
+/*   Updated: 2026/04/13 14:33:38 by mhidani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,25 +37,29 @@ int	main(void) {
 			"Failure: Execution fails if the form has not been signed"
 		);
 
-		ShrubberyCreationForm shrubbery("Forest");
+		AForm* shrubbery = new ShrubberyCreationForm("Forest");
 		Bureaucrat juliete("Juliete Petterson", 100);
-		std::cout << shrubbery << std::endl;
+		std::cout << *shrubbery << std::endl;
 		std::cout << juliete << std::endl;
-		juliete.executeForm(shrubbery);
+		juliete.executeForm(*shrubbery);
 		std::cout << std::endl;
 
-		RobotomyRequestForm robotom("Drill");
+		AForm* robotom = new RobotomyRequestForm("Drill");
 		Bureaucrat steffan("Steffan", 42);
-		std::cout << robotom << std::endl;
+		std::cout << *robotom << std::endl;
 		std::cout << steffan << std::endl;
-		steffan.executeForm(robotom);
+		steffan.executeForm(*robotom);
 		std::cout << std::endl;
 
-		PresidentialPardonForm presidential("Funding Authorization");
+		AForm* presidential = new PresidentialPardonForm("Funding Authorization");
 		Bureaucrat secretaryEconomy("Secretary of the Economy", 2);
-		std::cout << presidential << std::endl;
+		std::cout << *presidential << std::endl;
 		std::cout << secretaryEconomy << std::endl;
-		secretaryEconomy.executeForm(presidential);
+		secretaryEconomy.executeForm(*presidential);
+
+		delete shrubbery;
+		delete robotom;
+		delete presidential;
 
 	} std::cout << std::endl;
 
@@ -64,28 +68,32 @@ int	main(void) {
 			"Failure: The grade is lower than what is required to pass"
 		);
 
-		ShrubberyCreationForm shrubbery("Forest");
+		AForm* shrubbery = new ShrubberyCreationForm("Forest");
 		Bureaucrat juliete("Juliete Petterson", 138);
-		std::cout << shrubbery << std::endl;
+		std::cout << *shrubbery << std::endl;
 		std::cout << juliete << std::endl;
-		juliete.signForm(shrubbery);
-		juliete.executeForm(shrubbery);
+		juliete.signForm(*shrubbery);
+		juliete.executeForm(*shrubbery);
 		std::cout << std::endl;
 
-		RobotomyRequestForm robotom("Drill");
+		AForm* robotom = new RobotomyRequestForm("Drill");
 		Bureaucrat steffan("Steffan", 46);
-		std::cout << robotom << std::endl;
+		std::cout << *robotom << std::endl;
 		std::cout << steffan << std::endl;
-		steffan.signForm(robotom);
-		steffan.executeForm(robotom);
+		steffan.signForm(*robotom);
+		steffan.executeForm(*robotom);
 		std::cout << std::endl;
 
-		PresidentialPardonForm presidential("Funding Authorization");
+		AForm* presidential = new PresidentialPardonForm("Funding Authorization");
 		Bureaucrat secretaryEconomy("Secretary of the Economy", 6);
-		std::cout << presidential << std::endl;
+		std::cout << *presidential << std::endl;
 		std::cout << secretaryEconomy << std::endl;
-		secretaryEconomy.signForm(presidential);
-		secretaryEconomy.executeForm(presidential);
+		secretaryEconomy.signForm(*presidential);
+		secretaryEconomy.executeForm(*presidential);
+
+		delete shrubbery;
+		delete robotom;
+		delete presidential;
 
 	} std::cout << std::endl;
 
@@ -94,28 +102,32 @@ int	main(void) {
 			"Success: Execute form when bureaucrat grade is higher than the execute"
 		);
 
-		ShrubberyCreationForm shrubbery("Forest");
+		AForm* shrubbery = new ShrubberyCreationForm("Forest");
 		Bureaucrat juliete("Juliete Petterson", 100);
-		std::cout << shrubbery << std::endl;
+		std::cout << *shrubbery << std::endl;
 		std::cout << juliete << std::endl;
-		juliete.signForm(shrubbery);
-		juliete.executeForm(shrubbery);
+		juliete.signForm(*shrubbery);
+		juliete.executeForm(*shrubbery);
 		std::cout << std::endl;
 
-		RobotomyRequestForm robotom("Drill");
+		AForm* robotom = new RobotomyRequestForm("Drill");
 		Bureaucrat steffan("Steffan", 42);
-		std::cout << robotom << std::endl;
+		std::cout << *robotom << std::endl;
 		std::cout << steffan << std::endl;
-		steffan.signForm(robotom);
-		steffan.executeForm(robotom);
+		steffan.signForm(*robotom);
+		steffan.executeForm(*robotom);
 		std::cout << std::endl;
 
-		PresidentialPardonForm presidential("Funding Authorization");
+		AForm* presidential = new PresidentialPardonForm("Funding Authorization");
 		Bureaucrat secretaryEconomy("Secretary of the Economy", 2);
-		std::cout << presidential << std::endl;
+		std::cout << *presidential << std::endl;
 		std::cout << secretaryEconomy << std::endl;
-		secretaryEconomy.signForm(presidential);
-		secretaryEconomy.executeForm(presidential);
+		secretaryEconomy.signForm(*presidential);
+		secretaryEconomy.executeForm(*presidential);
+
+		delete shrubbery;
+		delete robotom;
+		delete presidential;
 
 	} std::cout << std::endl;
 	return 0;
